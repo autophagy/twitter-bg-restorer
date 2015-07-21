@@ -5,7 +5,18 @@
 
 <h1>Twitter Background Restorer Options</h1>
 <p>Image URL:<br/>
-    <input type="text" id="bgURL"/>
+    <input type="text" id="bgURL"/> Tile background: <input type="checkbox" id="bgTile">
+</p>
+
+<p>Background Colour (eg #000000):<br/>
+    <input type="text" id="bgColour"/>
+</p>
+
+<p>Background type:
+<select id="bgType">
+    <option value="image">background image</option>
+    <option value="colour">background colour</option>
+</select>
 </p>
 
 <div id="status"></div>

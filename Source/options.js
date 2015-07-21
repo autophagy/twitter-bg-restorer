@@ -1,10 +1,17 @@
 function save_options() {
   var bgURL = document.getElementById('bgURL').value;
+  var bgTile = document.getElementById('bgTile').checked;
+  console.log(bgTile);
+  var bgColour = document.getElementById('bgColour').value;
+  var bgType = document.getElementById('bgType').value;
   chrome.storage.sync.set({
-    backgroundURL: bgURL
+    backgroundURL: bgURL,
+    backgroundTile: bgTile,
+    backgroundColour: bgColour,
+    backgroundType: bgType
   }, function() {
     var status = document.getElementById('status');
-    status.textContent = 'URL saved.';
+    status.textContent = 'Options saved.';
     setTimeout(function() {
       status.textContent = '';
     }, 750);
@@ -13,9 +20,15 @@ function save_options() {
 
 function restore_options() {
   chrome.storage.sync.get({
-    backgroundURL: ''
+    backgroundURL: '',
+    backgroundTile: true,
+    backgroundColour: '',
+    backgroundType: 'image'
   }, function(items) {
     document.getElementById('bgURL').value = items.backgroundURL;
+    document.getElementById('bgTile').checked = items.backgroundTile;
+    document.getElementById('bgColour').value = items.backgroundColour;
+    document.getElementById('bgType').value = items.backgroundType;
   });
 }
 document.addEventListener('DOMContentLoaded', restore_options);
