@@ -2,7 +2,7 @@
 
 A temporary solution to the web twitter's very good decision to make the home background a horrible grey colour. Lol
 
-[Download .crx file](twitter-bg-restorer.crx)
+[Download .crx file](https://github.com/Autophagy/twitter-bg-restorer/blob/master/twitter-bg-restorer.crx?raw=true)
 
 ## Installation
 
