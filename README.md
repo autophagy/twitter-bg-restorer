@@ -8,7 +8,7 @@ A temporary solution to the web twitter's very good decision to make the home ba
 
 Go to [chrome://extensions/](chrome://extensions/) and drag the .crx file into it. Then click on 'Options' below the extension.
 
-This is where it gets a little unwieldy, but whatever. Go to link that contains your tweet (so you can see your background), press ctrl+u to view the source.
+This is where it gets a little unwieldy, but whatever. Go to a link that contains your tweet (so you can see your background), press ctrl+u to view the source.
 
 Ctrl+f for 'js-user-style-bg-img'. There should be a bit that says `body.user-style-<YOUR USERNAME>`. Inside this there should be a css rule that says `background-image: url(X)`.
 
