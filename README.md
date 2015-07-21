@@ -6,7 +6,7 @@ A temporary solution to the web twitter's very good decision to make the home ba
 
 ## Installation
 
-Go to [chrome://extensions/](chrome://extensions/) and drag the .crx file into it. Then click on 'Options' below the extension.
+Go to [chrome://extensions/](chrome://extensions/) and drag the .crx file into it. If it refuses to install because its not from THE OFFICIAL GOOGLE STORE then clicking the checkbox that says 'Developer Mode' should work, I think.  Then click on 'Options' below the extension.
 
 This is where it gets a little unwieldy, but whatever. Go to a link that contains your tweet (so you can see your background), press ctrl+u to view the source.
 
