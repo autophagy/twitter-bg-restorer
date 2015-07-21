@@ -9,6 +9,8 @@ chrome.storage.sync.get({
         body.style.backgroundImage = 'url(' + items.backgroundURL + ')';
         if(items.backgroundTile) {
             body.style.backgroundRepeat = 'repeat';
+        } else {
+            body.style.backgroundRepeat = 'no-repeat';
         }
     } else {
         body.style.backgroundColor = items.backgroundColour;
