@@ -7,6 +7,7 @@ chrome.storage.sync.get({
 }, function(items) {
     if(items.backgroundType == 'image') {
         body.style.backgroundImage = 'url(' + items.backgroundURL + ')';
+        body.style.backgroundAttachment = 'fixed';
         if(items.backgroundTile) {
             body.style.backgroundRepeat = 'repeat';
         } else {
