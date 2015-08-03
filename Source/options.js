@@ -1,7 +1,6 @@
 function save_options() {
   var bgURL = document.getElementById('bgURL').value;
   var bgTile = document.getElementById('bgTile').checked;
-  console.log(bgTile);
   var bgColour = document.getElementById('bgColour').value;
   var bgType = document.getElementById('bgType').value;
   chrome.storage.sync.set({

@@ -5,6 +5,12 @@ chrome.storage.sync.get({
     backgroundColour: '',
     backgroundType: 'image'
 }, function(items) {
+
+    if(items.backgroundColour != '')
+    {
+        body.style.backgroundColor = items.backgroundColour;
+    }
+
     if(items.backgroundType == 'image') {
         body.style.backgroundImage = 'url(' + items.backgroundURL + ')';
         body.style.backgroundAttachment = 'fixed';
@@ -13,7 +19,5 @@ chrome.storage.sync.get({
         } else {
             body.style.backgroundRepeat = 'no-repeat';
         }
-    } else {
-        body.style.backgroundColor = items.backgroundColour;
     }
 });
