@@ -22,3 +22,7 @@ NOTE: If chrome disables this after you restart because its not from the store, 
 - Use Chromium/Canary instead of standard chrome (but I wouldnt recommend this if yr comfortable with chrome anyway)
 
 I am sorry that it's so finickity! Trying to get extensions to work that are not from the Google Store is a pain. As an aside, if anyone has a Google Dev account and wants to up this to there then you have my blessing! Just let me know + credit me :)
+
+### Links
+
+This tiny bit of javascript-barf has been linked to from [The Guardian](http://www.theguardian.com/technology/2015/jul/21/twitter-removes-background-images-timeline-fix-chrom-plugin), [iDigitalTimes](http://www.idigitaltimes.com/twitter-background-image-disappeared-heres-how-fix-it-460114), [VentureBeat](http://venturebeat.com/2015/07/21/as-twitter-turns-off-timeline-background-images-one-developer-has-already-built-a-workaround/), [Gizmodo](http://www.gizmodo.jp/2015/07/_twitter_2.html) and [Lifehacker](http://www.lifehacker.co.uk/2015/07/21/how-to-get-your-background-wallpaper-back-on-twitter)! 
