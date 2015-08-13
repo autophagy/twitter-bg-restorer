@@ -1,0 +1,81 @@
+body {
+    background-color: #5ea9dd;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    color: #444444;
+}
+
+#content {
+    width: 70em;
+    border-radius: 10px;
+    padding: 10px;
+    margin-right: auto;
+    margin-left: auto;
+    background-color: #ffffff;
+}
+
+#more_ruddy_content_innit {
+    display: inline-block;
+    width: 100%;
+}
+
+#content h1 {
+    text-align: center;
+    text-decoration: underline;
+    font-size: 3em;
+}
+
+#content h2 {
+    font-size: 1.5em;
+    margin-bottom: 0px;
+}
+
+#content .options {
+    background-color: #e3e3e3;
+    float: left;
+    padding: 5px;
+    border-radius: 10px;
+    width: 95%;
+    margin: 10px 10px 30px 10px;
+}
+
+#bgURL {
+    width: 84%;
+}
+
+#bgColour {
+    width: 62%;
+}
+
+#bgType {
+    font-size: 1.5em;
+}
+
+.info {
+    font-style: italic;
+    margin: 10px;
+}
+
+#content .option_title {
+    margin: 10px;
+    font-size: 1.5em;
+    width: 10em;
+}
+
+#content #save_area {
+    float: left;
+}
+
+#content #save_area #save {
+    width: 8em;
+    font-size: 1.3em;
+}
+
+#content #contact {
+    width: 99%;
+    float: left;
+    border: 1px dashed grey;
+    font-style: italic;
+    margin-top: 25px;
+    padding: 2px;
+    text-align: center;
+}

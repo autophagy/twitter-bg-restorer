@@ -1,26 +1,57 @@
 <!DOCTYPE html>
 <html>
-<head><title>Twitter Background Restorer Options</title></head>
+<head>
+    <title>Twitter Background Restorer Options</title>
+    <link href="options.css" rel="stylesheet" type="text/css">
+</head>
 <body>
 
-<h1>Twitter Background Restorer Options</h1>
-<p>Image URL:<br/>
-    <input type="text" id="bgURL"/> Tile background: <input type="checkbox" id="bgTile">
-</p>
+<div id="content">
+    <h1>Twitter Background Restorer Options</h1>
+        <div id="more_ruddy_content_innit">
+        <h2>Image Options</h2>
+        <div class="options" id="image_options">
+            <p><span class="option_title">Image URL:</span>
+                <input type="text" id="bgURL"/>
+            </p>
+            <p>
+                <span class="option_title">Tile background: </span> <input type="checkbox" id="bgTile">
+            </p>
+        </div>
 
-<p>Background Colour (eg #000000):<br/>
-    <input type="text" id="bgColour"/>
-</p>
+        <h2>Background Colour Options</h2>
+        <div class="options" id="colour_options">
+            <p><span class="option_title">Background Colour (eg #000000):</span>
+                <input type="text" id="bgColour"/>
+            </p>
 
-<p>Background type:
-<select id="bgType">
-    <option value="image">background image</option>
-    <option value="colour">background colour</option>
-</select>
-</p>
+        </div>
 
-<div id="status"></div>
-<button id="save">Save</button>
+        <h2>Background Type</h2>
+        <div class="options" id="type_options">
+            <p><span class="option_title">Background type:</span>
+            <select id="bgType">
+                <option value="image">Image</option>
+                <option value="colour">Colour</option>
+            </select>
+            </p>
+            <p class="info">
+                Note: If you select the image background type and have a background colour set above, then that colour will be set underneath the image, in case you chose an untiled background.
+            </p>
+        </div>
+
+        <div id="save_area">
+            <div id="status"></div>
+            <button id="save">Save</button>
+        </div>
+
+        <div id="contact">
+            <p>
+                If you have any questions or issues please feel free to contact me via <a href="mailto:mail@deadcells.org">email</a> or at <a href="https://twitter.com/dead_cells">twitter</a>. If you want to make any improvements then <a href="https://github.com/Autophagy/twitter-bg-restorer/pulls">pull requests</a> are always welcome!
+            </p>
+        </div>
+    </div>
+</div>
 
 <script src="options.js"></script>
 </body>

@@ -1,8 +1,11 @@
 {
 	"manifest_version": 2,
-	"name": "Twitter Background Replacer",
+	"name": "Twitter Background Restorer",
 	"version": "1.0",
-	"description": "Replaces the horrible, white background with your actual BG.",
+	"description": "Restores your own twitter background, instead of the horrible white one.",
+	"icons": {"128": "icon128.png",
+			   "48": "icon48.png",
+			   "16": "icon16.png"},
     "permissions": ["http://*.twitter.com/", "https://*.twitter.com/", "storage"],
     "options_page": "options.html",
 	"content_scripts":
