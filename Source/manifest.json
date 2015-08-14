@@ -1,7 +1,7 @@
 {
 	"manifest_version": 2,
 	"name": "Twitter Background Restorer",
-	"version": "1.6",
+	"version": "1.7",
 	"description": "Restores your own twitter background, instead of the horrible white one.",
 	"author": "Mika (Autophagy)",
 	"homepage_url": "https://github.com/Autophagy/twitter-bg-restorer",
@@ -14,7 +14,8 @@
 	"content_scripts":
 	[
 		{
-			"matches": ["http://*.twitter.com/", "https://*.twitter.com/"],
+			"matches": ["http://*.twitter.com/", "https://*.twitter.com/",
+						"http://*.twitter.com/i/notifications", "https://*.twitter.com/i/notifications"],
 			"js": ["content_script.js"],
 			"run_at": "document_idle"
 		}
