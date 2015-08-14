@@ -2,7 +2,7 @@
 
 A temporary solution to the web twitter's very good decision to make the home background a horrible grey colour. Lol
 
-[Download .crx file](https://github.com/Autophagy/twitter-bg-restorer/blob/master/twitter-bg-restorer.crx?raw=true)
+[Download .crx file](https://github.com/Autophagy/twitter-bg-restorer/raw/master/twitter-bg-restorer.crx)
 
 ## Installation
 
@@ -25,4 +25,4 @@ I am sorry that it's so finickity! Trying to get extensions to work that are not
 
 ### Links
 
-This tiny bit of javascript-barf has been linked to from [The Guardian](http://www.theguardian.com/technology/2015/jul/21/twitter-removes-background-images-timeline-fix-chrom-plugin), [iDigitalTimes](http://www.idigitaltimes.com/twitter-background-image-disappeared-heres-how-fix-it-460114), [VentureBeat](http://venturebeat.com/2015/07/21/as-twitter-turns-off-timeline-background-images-one-developer-has-already-built-a-workaround/), [Gizmodo](http://www.gizmodo.jp/2015/07/_twitter_2.html) and [Lifehacker](http://www.lifehacker.co.uk/2015/07/21/how-to-get-your-background-wallpaper-back-on-twitter)! 
+This tiny bit of javascript-barf has been linked to from [The Guardian](http://www.theguardian.com/technology/2015/jul/21/twitter-removes-background-images-timeline-fix-chrom-plugin), [iDigitalTimes](http://www.idigitaltimes.com/twitter-background-image-disappeared-heres-how-fix-it-460114), [VentureBeat](http://venturebeat.com/2015/07/21/as-twitter-turns-off-timeline-background-images-one-developer-has-already-built-a-workaround/), [Gizmodo](http://www.gizmodo.jp/2015/07/_twitter_2.html) and [Lifehacker](http://www.lifehacker.co.uk/2015/07/21/how-to-get-your-background-wallpaper-back-on-twitter)!
