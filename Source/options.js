@@ -1,3 +1,12 @@
+function toggleInstructions() {
+    var element = document.getElementById('instructions');
+    if(element.style.display == 'block') {
+        element.style.display = 'none';
+    } else {
+        element.style.display = 'block';
+    }
+}
+
 function save_options() {
   var bgURL = document.getElementById('bgURL').value;
   var bgTile = document.getElementById('bgTile').checked;

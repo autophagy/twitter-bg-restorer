@@ -38,6 +38,13 @@ body {
     margin: 10px 10px 30px 10px;
 }
 
+#instructions {
+    border: 1px dashed black;
+    padding: 10px;
+    margin: 10px;
+    display: none;
+}
+
 #bgURL {
     width: 84%;
 }

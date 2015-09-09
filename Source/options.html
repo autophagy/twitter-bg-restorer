@@ -9,6 +9,13 @@
 <div id="content">
     <h1>Twitter Background Restorer Options</h1>
         <div id="more_ruddy_content_innit">
+        <a href="#" onclick="toggleInstructions();">Instructions</a>
+        <div id="instructions">
+            <p>Go to a direct link of one of your tweets, so that you can see the background you've set via twitter. Press ctrl+u to view the HTML source of the page.</p>
+            <p>Search (with ctrl+f) through this source code for "js-user-style-bg-img". In this tag, there should be some code specifying the URL of your background image, like this:</p>
+            <img src="instruction.png" />
+            <p>Copy and paste this into the image URL box below. The image URL must be from twitter/twimg as twitter's security options block loading in images from outside websites.</p>
+        </div>
         <h2>Image Options</h2>
         <div class="options" id="image_options">
             <p><span class="option_title">Image URL:</span>
