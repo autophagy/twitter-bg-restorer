@@ -43,6 +43,11 @@ body {
     padding: 10px;
     margin: 10px;
     display: none;
+    font-size: 1.3em;
+}
+
+#instructions img {
+    width: 100%;
 }
 
 #bgURL {

@@ -1,4 +1,4 @@
-function toggleInstructions() {
+function toggle_instructions() {
     var element = document.getElementById('instructions');
     if(element.style.display == 'block') {
         element.style.display = 'none';
@@ -42,3 +42,4 @@ function restore_options() {
 document.addEventListener('DOMContentLoaded', restore_options);
 document.getElementById('save').addEventListener('click',
     save_options);
+document.getElementById('instruction-button').addEventListener('click', toggle_instructions);
