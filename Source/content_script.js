@@ -6,18 +6,27 @@ chrome.storage.sync.get({
     backgroundType: 'image'
 }, function(items) {
 
+    var css = document.createElement("style");
+    css.type = "text/css";
+    var cssString = "body { ";
+    css.innerHTML = "strong { color: red }";
+    document.body.appendChild(css);
+
     if(items.backgroundColour != '')
     {
-        body.style.backgroundColor = items.backgroundColour;
+        cssString += "background-color: " + items.backgroundColour + "; ";
     }
 
     if(items.backgroundType == 'image') {
-        body.style.backgroundImage = 'url(' + items.backgroundURL + ')';
-        body.style.backgroundAttachment = 'fixed';
+        cssString += "background-image: url(" + items.backgroundURL + "); "
+        cssString += "background-attachment: 'fixed'; "
         if(items.backgroundTile) {
-            body.style.backgroundRepeat = 'repeat';
+            cssString += "background-repeat: 'repeat'; "
         } else {
-            body.style.backgroundRepeat = 'no-repeat';
+            cssString += "background-repeat: 'no-repeat'; "
         }
     }
+
+    css.innerHTML = cssString;
+    document.body.appendChild(css);
 });
