@@ -19,11 +19,11 @@ chrome.storage.sync.get({
 
     if(items.backgroundType == 'image') {
         cssString += "background-image: url(" + items.backgroundURL + "); "
-        cssString += "background-attachment: 'fixed'; "
+        cssString += "background-attachment: fixed; "
         if(items.backgroundTile) {
-            cssString += "background-repeat: 'repeat'; "
+            cssString += "background-repeat: repeat; "
         } else {
-            cssString += "background-repeat: 'no-repeat'; "
+            cssString += "background-repeat: no-repeat; "
         }
     }
 
