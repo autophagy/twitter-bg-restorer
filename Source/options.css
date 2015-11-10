@@ -75,6 +75,7 @@ body {
 
 #content #save_area {
     float: left;
+    padding-top: 20px;
 }
 
 #content #save_area #save {
@@ -90,4 +91,48 @@ body {
     margin-top: 25px;
     padding: 2px;
     text-align: center;
+}
+
+#content #user-specific-options {
+    font-size: 1.1em;
+    width: 95%;
+    display: none;
+}
+
+#user-specific-button {
+    display: block;
+    padding-bottom: 0px;
+}
+
+#content #user-specific-options #user-option-info {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+#user-option-info #uname-info {
+    padding-right: 35px;
+}
+
+#user-option-info #image-info {
+    padding-right: 360px;
+}
+
+#user-option-info #colour-info {
+    padding-right: 95px;
+}
+
+#user-options .user-option {
+    padding: 10px 0px 10px 0px;
+}
+
+#user-options .user-option input.username {
+    width: 100px;
+}
+
+#user-options .user-option input.userimage {
+    width: 445px;
+}
+
+#user-options-controller {
+    text-align: right;
 }

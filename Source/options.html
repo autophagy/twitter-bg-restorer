@@ -3,6 +3,7 @@
 <head>
     <title>Twitter Background Restorer Options</title>
     <link href="options.css" rel="stylesheet" type="text/css">
+    <script src="jquery-2.1.4.min.js" /></script>
 </head>
 <body>
 
@@ -45,6 +46,44 @@
             <p class="info">
                 Note: If you select the image background type and have a background colour set above, then that colour will be set underneath the image, in case you chose an untiled background.
             </p>
+        </div>
+
+        <a href="#user-specific-options" id="user-specific-button">User Specific Options</a>
+        <div id="user-specific-options">
+            <p>Here you can set background options for specfic usernames. If no specific user style is found for the account you have logged in, then the general image options above are used.</p>
+
+            <div id="user-option-info">
+                <span id="uname-info">
+                    Username:
+                </span>
+                <span id="image-info">
+                    Image URL:
+                </span>
+                <span id="colour-info">
+                    Colour:
+                </span>
+                <span id="type-info">
+                    Type:
+                </span>
+            </div>
+
+            <div id="user-options">
+                <div class="user-option">
+                    @<input type="text" class="username"/>
+                    <input type="text" class="userimage"/>
+                    <input type="text" class="usercolour"/>
+                    <select class="userBgType">
+                        <option value="image">Image</option>
+                        <option value="colour">Colour</option>
+                    </select>
+                </div>
+            </div>
+
+            <div id="user-options-controller">
+                <button id="add">+</button>
+                <button id="remove">-</button>
+            </div>
+
         </div>
 
         <div id="save_area">
