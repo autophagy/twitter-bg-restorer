@@ -114,7 +114,11 @@ body {
 }
 
 #user-option-info #image-info {
-    padding-right: 360px;
+    padding-right: 315px;
+}
+
+#user-option-info #tile-info {
+    padding-right: 3px;
 }
 
 #user-option-info #colour-info {
@@ -130,7 +134,7 @@ body {
 }
 
 #user-options .user-option input.userimage {
-    width: 445px;
+    width: 415px;
 }
 
 #user-options-controller {
