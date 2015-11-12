@@ -3,24 +3,39 @@ chrome.storage.sync.get({
     backgroundURL: '',
     backgroundTile: true,
     backgroundColour: '',
-    backgroundType: 'image'
+    backgroundType: 'image',
+    userOptions: []
 }, function(items) {
 
     var css = document.createElement("style");
     css.type = "text/css";
     var cssString = "body { ";
-    css.innerHTML = "strong { color: red }";
-    document.body.appendChild(css);
 
-    if(items.backgroundColour != '')
-    {
-        cssString += "background-color: " + items.backgroundColour + "; ";
+    bgURL = items.backgroundURL;
+    bgTile = items.backgroundTile;
+    bgColour = items.backgroundColour;
+    bgType = items.backgroundType;
+
+    for (var i in items.userOptions) {
+        userOption = items.userOptions[i];
+        if(document.getElementsByClassName('user-style-' + userOption[0])[0] != null) {
+            bgURL = userOption[1];
+            bgTile = userOption[2];
+            bgColour = userOption[3];
+            bgType = userOption[4];
+        }
     }
 
-    if(items.backgroundType == 'image') {
-        cssString += "background-image: url(" + items.backgroundURL + "); "
+
+    if(bgColour != '')
+    {
+        cssString += "background-color: " + bgColour + "; ";
+    }
+
+    if(bgType == 'image') {
+        cssString += "background-image: url(" + bgURL + "); "
         cssString += "background-attachment: fixed; "
-        if(items.backgroundTile) {
+        if(bgTile) {
             cssString += "background-repeat: repeat; "
         } else {
             cssString += "background-repeat: no-repeat; "
