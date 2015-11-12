@@ -26,7 +26,6 @@ chrome.storage.sync.get({
         }
     }
 
-
     if(bgColour != '')
     {
         cssString += "background-color: " + bgColour + "; ";
