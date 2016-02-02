@@ -9,7 +9,7 @@ chrome.storage.sync.get({
 
     var css = document.createElement("style");
     css.type = "text/css";
-    var cssString = "body { ";
+    var cssString = "body:not(.PermalinkPage) { ";
 
     bgURL = items.backgroundURL;
     bgTile = items.backgroundTile;
