@@ -8,9 +8,9 @@ A temporary solution to the web twitter's very good decision to make the home ba
 
 Install from the Web Store and click on 'Options' below the extension.
 
-This is where it gets a little unwieldy, but whatever. Go to a link that contains your tweet (so you can see your background), press ctrl+u to view the source.
+This is where it gets a little unwieldy, but whatever. Go to your twitter settings and click on the Design tab. Make sure the background image you want to use appears in the preview window in the 'Customize your own' section.
 
-Ctrl+f for 'js-user-style-bg-img'. There should be a bit that says `body.user-style-<YOUR USERNAME>`. Inside this there should be a css rule that says `background-image: url(X)`, like below:
+Press ctrl+u to view the source of the page. Search (with ctrl+f) through this source code for "background_image_preview". In this tag, there should be some code specifying the URL of your background image, like this:
 
 ![Sample Image](Source/instruction.png)
 
