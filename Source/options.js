@@ -24,6 +24,9 @@ function save_options() {
 
   var userBgOptions = new Array();
 
+  var status = document.getElementById('status');
+  status.textContent = 'Saving...';
+
   $('#user-options .user-option').each(function() {
       username = $(this).find('input.username').val().trim();
       if(username != '') {
@@ -45,6 +48,9 @@ function save_options() {
             var userBase64 = canvas.toDataURL();
             canvas = null;
             userBgOptions.push([uname, userImage, userBase64, userTile, userColour, userType]);
+            chrome.storage.local.set({
+              userOptions: userBgOptions
+            }, function() { });
           };
           usrImage.src = userImage;
       }
@@ -64,8 +70,7 @@ function save_options() {
     canvas = null;
 
     chrome.storage.local.set({
-      backgroundBase64: bgBase64,
-      userOptions: userBgOptions
+      backgroundBase64: bgBase64
     }, function() { });
 
     chrome.storage.sync.set({
