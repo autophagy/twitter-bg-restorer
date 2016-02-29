@@ -27,28 +27,61 @@ function save_options() {
   $('#user-options .user-option').each(function() {
       username = $(this).find('input.username').val().trim();
       if(username != '') {
+          uname = username;
           userImage = $(this).find('input.userimage').val().trim();
           userTile = $(this).find('input.usertile').is(':checked');
           userColour = $(this).find('input.usercolour').val().trim();
           userType = $(this).find('select.userbgtype').val().trim();
 
-          userBgOptions.push([username, userImage, userTile, userColour, userType]);
+          var usrImage = new Image();
+          usrImage.crossOrigin = 'Anonymous';
+          usrImage.onload = function(){
+            var canvas = document.createElement('CANVAS');
+            var context = canvas.getContext('2d');
+
+            canvas.height = this.height;
+            canvas.width = this.width;
+            context.drawImage(this, 0, 0);
+            var userBase64 = canvas.toDataURL();
+            canvas = null;
+            userBgOptions.push([uname, userImage, userBase64, userTile, userColour, userType]);
+          };
+          usrImage.src = userImage;
       }
   });
 
-  chrome.storage.sync.set({
-    backgroundURL: bgURL,
-    backgroundTile: bgTile,
-    backgroundColour: bgColour,
-    backgroundType: bgType,
-    userOptions: userBgOptions
-  }, function() {
-    var status = document.getElementById('status');
-    status.textContent = 'Options saved.';
-    setTimeout(function() {
-      status.textContent = '';
-    }, 750);
-  });
+  var image = new Image();
+  image.crossOrigin = 'Anonymous';
+  image.onload = function(){
+
+    var canvas = document.createElement('CANVAS');
+    var context = canvas.getContext('2d');
+
+    canvas.height = this.height;
+    canvas.width = this.width;
+    context.drawImage(this, 0, 0);
+    var bgBase64 = canvas.toDataURL();
+    canvas = null;
+
+    chrome.storage.local.set({
+      backgroundBase64: bgBase64,
+      userOptions: userBgOptions
+    }, function() { });
+
+    chrome.storage.sync.set({
+      backgroundURL: bgURL,
+      backgroundTile: bgTile,
+      backgroundColour: bgColour,
+      backgroundType: bgType
+    }, function() {
+      var status = document.getElementById('status');
+      status.textContent = 'Options saved.';
+      setTimeout(function() {
+        status.textContent = '';
+      }, 750);
+    });
+  };
+  image.src = bgURL;
 }
 
 function restore_options() {
@@ -64,12 +97,16 @@ function restore_options() {
     document.getElementById('bgColour').value = items.backgroundColour;
     document.getElementById('bgType').value = items.backgroundType;
 
-    for (var i in items.userOptions) {
-        userOption = items.userOptions[i];
-        add_user_row(userOption[0], userOption[1], userOption[2], userOption[3], userOption[4]);
-    }
+    chrome.storage.local.get({
+      userOptions: []
+    }, function(localItems) {
+      for (var i in localItems.userOptions) {
+          userOption = localItems.userOptions[i];
+          add_user_row(userOption[0], userOption[1], userOption[3], userOption[4], userOption[5]);
+      }
 
-    add_user_row('', '', false, '', 'image');
+      add_user_row('', '', false, '', 'image');
+    });
 
   });
 }

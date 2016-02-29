@@ -4,43 +4,55 @@ chrome.storage.sync.get({
     backgroundTile: true,
     backgroundColour: '',
     backgroundType: 'image',
-    userOptions: []
 }, function(items) {
+    chrome.storage.local.get({
+      backgroundBase64: '',
+      userOptions: []
+    }, function(localItems) {
+      bgBase64 = localItems.backgroundBase64;
 
-    var css = document.createElement("style");
-    css.type = "text/css";
-    var cssString = "body:not(.PermalinkPage) { ";
+      var css = document.createElement("style");
+      css.type = "text/css";
+      var cssString = "body:not(.PermalinkPage) { ";
 
-    bgURL = items.backgroundURL;
-    bgTile = items.backgroundTile;
-    bgColour = items.backgroundColour;
-    bgType = items.backgroundType;
+      bgURL = items.backgroundURL;
+      bgTile = items.backgroundTile;
+      bgColour = items.backgroundColour;
+      bgType = items.backgroundType;
 
-    for (var i in items.userOptions) {
-        userOption = items.userOptions[i];
-        if(document.getElementsByClassName('user-style-' + userOption[0])[0] != null) {
-            bgURL = userOption[1];
-            bgTile = userOption[2];
-            bgColour = userOption[3];
-            bgType = userOption[4];
-        }
-    }
+      for (var i in localItems.userOptions) {
+          userOption = localItems.userOptions[i];
+          if(document.getElementsByClassName('user-style-' + userOption[0])[0] != null) {
+              bgURL = userOption[1];
+              bgBase64 = userOption[2];
+              bgTile = userOption[3];
+              bgColour = userOption[4];
+              bgType = userOption[5];
+          }
+      }
 
-    if(bgColour != '')
-    {
-        cssString += "background-color: " + bgColour + "; ";
-    }
+      if(bgColour != '')
+      {
+          cssString += "background-color: " + bgColour + "; ";
+      }
 
-    if(bgType == 'image') {
-        cssString += "background-image: url(" + bgURL + "); "
-        cssString += "background-attachment: fixed; "
-        if(bgTile) {
-            cssString += "background-repeat: repeat; "
-        } else {
-            cssString += "background-repeat: no-repeat; "
-        }
-    }
+      if(bgType == 'image') {
+          // Old legacy checking
+          if (bgBase64 == '' || bgBase64 == undefined) {
+            cssString += "background-image: url(" + bgURL + "); "
+          } else {
+            cssString += "background-image: url(" + bgBase64 + "); "
+          }
+          cssString += "background-attachment: fixed; "
+          if(bgTile) {
+              cssString += "background-repeat: repeat; "
+          } else {
+              cssString += "background-repeat: no-repeat; "
+          }
+      }
 
-    css.innerHTML = cssString;
-    document.body.appendChild(css);
+      css.innerHTML = cssString;
+      document.body.appendChild(css);
+
+    });
 });
