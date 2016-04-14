@@ -12,17 +12,23 @@
         <div id="more_ruddy_content_innit">
         <a href="#" id="instruction-button">Instructions</a>
         <div id="instructions">
-          <p>Upload your image to an image hosting site, such as <a href="https://imgur.com/">imgur</a>. Then, paste the URL for your image into the Image URL box below, and hit save.</p>
+          <p>Use the image upload button in the Image Options -> New Image section to upload the background file you wish to use.</p>
           <p>You can also tile the background (or not), or just choose a background colour. The background colour will also appear behind untiled images.</p>
           <p>If you want to set user-specific background images, enter in the name and URL of your image in the User Specific Options section below.</p>
         </div>
         <h2>Image Options</h2>
         <div class="options" id="image_options">
-            <p><span class="option_title">Image URL:</span>
-                <input type="text" id="bgURL"/>
+            <p><span class="option_title">New Image:</span>
+                <input type="file" id="imageFile" accept="image/*"/>
             </p>
             <p>
                 <span class="option_title">Tile background: </span> <input type="checkbox" id="bgTile">
+            </p>
+            <p>
+              <span class="option_title">Current background image preview: </span>
+            </p>
+            <p style='text-align: center;'>
+              <canvas id="currentBG" width="790" height="200">
             </p>
         </div>
 
@@ -45,39 +51,6 @@
             <p class="info">
                 Note: If you select the image background type and have a background colour set above, then that colour will be set underneath the image, in case you chose an untiled background.
             </p>
-        </div>
-
-        <a href="#user-specific-options" id="user-specific-button">User Specific Options</a>
-        <div id="user-specific-options">
-            <p>Here you can set background options for specfic usernames. If no specific user style is found for the account you have logged in, then the general image options above are used.</p>
-
-            <div id="user-option-info">
-                <span id="uname-info">
-                    Username:
-                </span>
-                <span id="image-info">
-                    Image URL:
-                </span>
-                <span id="tile-info">
-                    Tile:
-                </span>
-                <span id="colour-info">
-                    Colour:
-                </span>
-                <span id="type-info">
-                    Type:
-                </span>
-            </div>
-
-            <div id="user-options">
-
-            </div>
-
-            <div id="user-options-controller">
-                <button id="add">+</button>
-                <button id="remove">-</button>
-            </div>
-
         </div>
 
         <div id="save_area">

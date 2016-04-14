@@ -6,8 +6,7 @@ chrome.storage.sync.get({
     backgroundType: 'image',
 }, function(items) {
     chrome.storage.local.get({
-      backgroundBase64: '',
-      userOptions: []
+      backgroundBase64: ''
     }, function(localItems) {
       bgBase64 = localItems.backgroundBase64;
 
@@ -19,17 +18,6 @@ chrome.storage.sync.get({
       bgTile = items.backgroundTile;
       bgColour = items.backgroundColour;
       bgType = items.backgroundType;
-
-      for (var i in localItems.userOptions) {
-          userOption = localItems.userOptions[i];
-          if(document.getElementsByClassName('user-style-' + userOption[0])[0] != null) {
-              bgURL = userOption[1];
-              bgBase64 = userOption[2];
-              bgTile = userOption[3];
-              bgColour = userOption[4];
-              bgType = userOption[5];
-          }
-      }
 
       if(bgColour != '')
       {
