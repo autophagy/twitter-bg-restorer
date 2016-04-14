@@ -82,6 +82,8 @@ function restore_options() {
         var canvas = document.getElementById('currentBG');
         var context = canvas.getContext('2d');
 
+        context.clearRect(0, 0, canvas.width, canvas.height);
+
         var image = new Image();
         image.onload = function() {
           context.drawImage(image, 0, 0);
