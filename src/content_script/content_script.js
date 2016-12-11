@@ -1,6 +1,7 @@
 var body = document.getElementsByTagName('body')[0];
 chrome.storage.sync.get({
     backgroundTile: true,
+    backgroundCover: false,
     backgroundColour: '',
     backgroundType: 'image',
 }, function(items) {
@@ -20,7 +21,8 @@ chrome.storage.sync.get({
       if(items.backgroundType == 'image') {
         cssString += "background-image: url(" + localItems.backgroundBase64 + "); "
         cssString += "background-attachment: fixed; "
-        cssString += (items.backgroundTile ? "background-repeat: repeat; " : "background-repeat: no-repeat");
+        cssString += (items.backgroundTile ? "background-repeat: repeat; " : "background-repeat: no-repeat; ");
+        cssString += (items.backgroundCover ? "background-size: cover" : "");
       }
 
       newCSSElement.innerHTML = cssString;

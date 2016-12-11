@@ -10,6 +10,7 @@ function toggle_instructions() {
 function save_options() {
 
   var bgTile = document.getElementById('bgTile').checked;
+  var bgCover = document.getElementById('bgCover').checked;
   var bgColour = document.getElementById('bgColour').value;
   var bgType = document.getElementById('bgType').value;
 
@@ -22,22 +23,22 @@ function save_options() {
   file = input.files[0];
 
   if(file) {
-    save_new_file(file, bgTile, bgColour, bgType);
+    save_new_file(file, bgTile, bgCover, bgColour, bgType);
   } else {
     chrome.storage.local.get({
       backgroundBase64: ''
     }, function(localItems) {
 
       if (!(localItems.backgroundBase64 == '' || localItems.backgroundBase64 == undefined)) {
-        set_chrome_storage(localItems.backgroundBase64, '', bgTile, bgColour, bgType);
+        set_chrome_storage(localItems.backgroundBase64, '', bgTile, bgCover, bgColour, bgType);
       } else {
-        set_chrome_storage('', '', bgTile, bgColour, bgType);
+        set_chrome_storage('', '', bgTile, bgCover, bgColour, bgType);
       }
     });
   }
 }
 
-function save_new_file(file, bgTile, bgColour, bgType) {
+function save_new_file(file, bgTile, bgCover, bgColour, bgType) {
   fileReader = new FileReader();
   fileReader.onload = function() {
     var image = new Image();
@@ -51,14 +52,14 @@ function save_new_file(file, bgTile, bgColour, bgType) {
       var bgBase64 = canvas.toDataURL();
       canvas = null;
 
-      set_chrome_storage(bgBase64, file.name, bgTile, bgColour, bgType);
+      set_chrome_storage(bgBase64, file.name, bgTile, bgCover, bgColour, bgType);
     }
     image.src = fileReader.result;
   }
   fileReader.readAsDataURL(file);
 }
 
-function set_chrome_storage(bgBase64, bgURL, bgTile, bgColour, bgType) {
+function set_chrome_storage(bgBase64, bgURL, bgTile, bgCover, bgColour, bgType) {
   chrome.storage.local.set({
     backgroundBase64: bgBase64
   }, function() { });
@@ -66,6 +67,7 @@ function set_chrome_storage(bgBase64, bgURL, bgTile, bgColour, bgType) {
   chrome.storage.sync.set({
     backgroundURL: bgURL,
     backgroundTile: bgTile,
+    backgroundCover: bgCover,
     backgroundColour: bgColour,
     backgroundType: bgType
   }, function() {
@@ -82,11 +84,13 @@ function restore_options() {
   chrome.storage.sync.get({
     backgroundURL: '',
     backgroundTile: true,
+    backgroundCover: false,
     backgroundColour: '',
     backgroundType: 'image'
   }, function(items) {
     document.getElementById('imageFile').title = items.backgroundURL;
     document.getElementById('bgTile').checked = items.backgroundTile;
+    document.getElementById('bgCover').checked = items.backgroundCover;
     document.getElementById('bgColour').value = items.backgroundColour;
     document.getElementById('bgType').value = items.backgroundType;
 
