@@ -9,7 +9,7 @@
 			   "48": "icon48.png",
 			   "16": "icon16.png"},
     "permissions": ["http://*.twitter.com/", "https://*.twitter.com/", "unlimitedStorage", "storage"],
-    "options_page": "options.html",
+    "options_page": "options/options.html",
 	"content_scripts":
 	[
 		{
@@ -17,7 +17,7 @@
 						"http://*.twitter.com/i/notifications", "https://*.twitter.com/i/notifications",
 						"http://*.twitter.com/*", "https://*.twitter.com/*"],
 
-			"js": ["content_script.js"],
+			"js": ["content_script/content_script.js"],
 			"run_at": "document_idle"
 		}
 	]
