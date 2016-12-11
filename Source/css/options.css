@@ -1,0 +1,81 @@
+html {
+  background-color: #2196F3;
+}
+
+body {
+    font-family: "Ubuntu",Helvetica,Arial,sans-serif;
+    color: #444444;
+    margin: 0px;
+    font-size: 15px;
+}
+
+a {
+  text-decoration: none;
+  font-weight: bold;
+}
+
+a:visited {
+  color: inherit;
+}
+
+#title-bar {
+  height: 64px;
+  line-height: 64px;
+  font-size: 30px;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14),0 1px 5px 0 rgba(0,0,0,0.12),0 3px 1px -2px rgba(0,0,0,0.2);
+}
+
+#content-container, #footer-container {
+  width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20px;
+}
+
+.options {
+  background-color: #f3f3f3;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14),0 1px 5px 0 rgba(0,0,0,0.12),0 3px 1px -2px rgba(0,0,0,0.2);
+  margin: 20px 0px;
+}
+
+.option-title {
+  margin-right: 10px;
+}
+
+button {
+  background: none;
+  border: none;
+  background-color: #fefefe;
+  padding: 10px;
+  font-size: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14),0 1px 5px 0 rgba(0,0,0,0.12),0 3px 1px -2px rgba(0,0,0,0.2);
+  cursor: pointer;
+}
+
+#instructions {
+  display: none;
+}
+
+#save-button {
+  width: 150px;
+}
+
+#currentBG {
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14),0 1px 5px 0 rgba(0,0,0,0.12),0 3px 1px -2px rgba(0,0,0,0.2);
+}
+
+#footer {
+  background-color: #f3f3f3;
+  margin-top: 20px;
+  padding: 20px;
+}
+
+#footer-container {
+  display: flex;
+  justify-content: space-between;
+}

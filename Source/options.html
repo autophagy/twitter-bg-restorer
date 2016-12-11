@@ -2,69 +2,70 @@
 <html>
 <head>
     <title>Twitter Background Restorer Options</title>
-    <link href="options.css" rel="stylesheet" type="text/css">
-    <script src="jquery-3.1.0.slim.min.js"></script>
+    <link href="css/options.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 
-<div id="content">
-    <h1>Twitter Background Restorer Options</h1>
-        <div id="more_ruddy_content_innit">
-        <a href="#" id="instruction-button">Instructions</a>
-        <div id="instructions">
-          <p>Use the image upload button in the Image Options -> New Image section to upload the background file you wish to use.</p>
-          <p>You can also tile the background (or not), or just choose a background colour. The background colour will also appear behind untiled images.</p>
-        </div>
-        <h2>Image Options</h2>
-        <div class="options" id="image_options">
-            <p><span class="option_title">New Image:</span>
-                <input type="file" id="imageFile" accept="image/*"/>
-            </p>
-            <p>
-                <span class="option_title">Tile background: </span> <input type="checkbox" id="bgTile">
-            </p>
-            <p>
-              <span class="option_title">Current background image preview: </span>
-            </p>
-            <p style='text-align: center;'>
-              <canvas id="currentBG" width="790" height="200">
-            </p>
-        </div>
-
-        <h2>Background Colour Options</h2>
-        <div class="options" id="colour_options">
-            <p><span class="option_title">Background Colour (eg #000000):</span>
-                <input type="text" id="bgColour"/>
-            </p>
-
-        </div>
-
-        <h2>Background Type</h2>
-        <div class="options" id="type_options">
-            <p><span class="option_title">Background type:</span>
-            <select id="bgType">
-                <option value="image">Image</option>
-                <option value="colour">Colour</option>
-            </select>
-            </p>
-            <p class="info">
-                Note: If you select the image background type and have a background colour set above, then that colour will be set underneath the image, in case you chose an untiled background.
-            </p>
-        </div>
-
-        <div id="save_area">
-            <div id="status"></div>
-            <button id="save">Save</button>
-        </div>
-
-        <div id="contact">
-            <p>
-                If you have any questions or issues please feel free to contact me via <a href="mailto:mail@autophagy.io">email</a> or at <a href="https://twitter.com/autophagyDev">twitter</a>. If you want to make any improvements then <a href="https://github.com/Autophagy/twitter-bg-restorer/pulls">pull requests</a> are always welcome!
-            </p>
-        </div>
-    </div>
+<div id="title-bar">
+  Twitter Background Restorer
 </div>
 
-<script src="options.js"></script>
+<div id="content-container">
+
+  <button id="instructions-button">Instructions</button>
+  <div class="options" id="instructions">
+    <p>Use the image upload button in the Image Options -> New Image section to upload the background file you wish to use.</p>
+    <p>You can also tile the background (or not), or just choose a background colour. The background colour will also appear behind untiled images.</p>
+  </div>
+
+
+  <div class="options" id="image_options">
+    <h2>Image Options</h2>
+    <p><span class="option-title">New Image:</span>
+        <input type="file" id="imageFile" accept="image/*"/>
+    </p>
+    <p>
+        <span class="option-title">Tile background: </span> <input type="checkbox" id="bgTile">
+    </p>
+    <p>
+      <span class="option-title">Current background image preview: </span>
+    </p>
+    <p style='text-align: center;'>
+      <canvas id="currentBG" width="790" height="200">
+    </p>
+  </div>
+
+  <div class="options" id="colour-options">
+    <h2>Background Colour Options</h2>
+    <p><span class="option-title">Background Colour:</span>
+        <input type="color" id="bgColour"/>
+    </p>
+  </div>
+
+  <div class="options" id="type-options">
+    <h2>Background Type Options</h2>
+    <p><span class="option-title">Background type:</span>
+    <select id="bgType">
+        <option value="image">Image</option>
+        <option value="colour">Colour</option>
+    </select>
+    </p>
+    <p class="info">
+        Note: If you select the image background type and have a background colour set above, then that colour will be set underneath the image, in case you chose an untiled background.
+    </p>
+  </div>
+
+  <button id="save-button">Save</button>
+
+</div>
+
+<div id="footer">
+  <div id="footer-container">
+    <div id="attribution">Made by <a href="http://autophagy.io/">autophagy</a></div>
+    <div id="github"><a href="https://github.com/Autophagy/twitter-bg-restorer">Github</a></div>
+  </div>
+</div>
+
+<script src="js/options.js"></script>
 </body>
 </html>

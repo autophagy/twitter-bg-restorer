@@ -15,7 +15,7 @@ function save_options() {
 
   var userBgOptions = new Array();
 
-  var status = document.getElementById('status');
+  var status = document.getElementById('save-button');
   status.textContent = 'Saving...';
 
   var input = document.getElementById('imageFile');
@@ -69,11 +69,11 @@ function set_chrome_storage(bgBase64, bgURL, bgTile, bgColour, bgType) {
     backgroundColour: bgColour,
     backgroundType: bgType
   }, function() {
-    var status = document.getElementById('status');
-    status.textContent = 'Options saved.';
+    var status = document.getElementById('save-button');
+    status.textContent = 'Saved';
     restore_options();
     setTimeout(function() {
-      status.textContent = '';
+      status.textContent = 'Save';
     }, 750);
   });
 }
@@ -112,6 +112,6 @@ function restore_options() {
 }
 
 document.addEventListener('DOMContentLoaded', restore_options);
-document.getElementById('save').addEventListener('click',
+document.getElementById('save-button').addEventListener('click',
     save_options);
-document.getElementById('instruction-button').addEventListener('click', toggle_instructions);
+document.getElementById('instructions-button').addEventListener('click', toggle_instructions);
