@@ -1,16 +1,23 @@
 ![Twitter bg restorer logo](src/options/images/logo.png)
 
-A temporary solution to the web twitter's very good decision to make the home background a horrible grey colour. Lol
+A chrome extension that lets you set a custom background image and colour for web twitter. A nostalgic throwback to when the homepage wasn't a sea of searing white.
 
 [Download from the Web Store](https://chrome.google.com/webstore/detail/twitter-background-restor/gcjejnlljikllkloanankijokfbaelhi)
 
 ## Installation
 
-Install from the Web Store and click on 'Options' below the extension.
+Install from the Web Store and click on 'Options' below the extension. You can then upload an image and specify a colour.
 
-Copy and paste an image URL for your background image into the extension settings, and choose whether it is a tiled image or not. You can also just set it to use a less horrible background colour by filling in the colour textbox with a hex value, and changing the dropdown to 'background colour'. Hit save, refresh twitter and it should work.
+You can currently:
 
-until twitter gets rid of backgrounds entirely but hey
+- Upload a custom image
+- Set a custom background colour
+- Specify whether the image tiles or not
+- Specify whether the image stretches to cover the page or not.
+
+If you have any feature requests or ideas for improvement, please open an issue!
+
+*Note: This is a purely local change. Other users cannot see the background you set, I'm afraid - this is only to re-implement homepage customisation that twitter has removed.*
 
 ### Links
 
