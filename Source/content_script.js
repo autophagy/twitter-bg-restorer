@@ -1,6 +1,5 @@
 var body = document.getElementsByTagName('body')[0];
 chrome.storage.sync.get({
-    backgroundURL: '',
     backgroundTile: true,
     backgroundColour: '',
     backgroundType: 'image',
@@ -8,39 +7,24 @@ chrome.storage.sync.get({
     chrome.storage.local.get({
       backgroundBase64: ''
     }, function(localItems) {
-      bgBase64 = localItems.backgroundBase64;
 
-      var css = document.createElement("style");
-      css.type = "text/css";
+      var newCSSElement = document.createElement("style");
+      newCSSElement.type = "text/css";
+
+      // This applies the CSS rule to every page except for permalink pages
+      // This is so the user's background on a tweet permalink will be displayed;
       var cssString = "body:not(.PermalinkPage) { ";
 
-      bgURL = items.backgroundURL;
-      bgTile = items.backgroundTile;
-      bgColour = items.backgroundColour;
-      bgType = items.backgroundType;
+      if (items.backgroundColour != '') cssString += "background-color: " + items.backgroundColour + "; ";
 
-      if(bgColour != '')
-      {
-          cssString += "background-color: " + bgColour + "; ";
+      if(items.backgroundType == 'image') {
+        cssString += "background-image: url(" + localItems.backgroundBase64 + "); "
+        cssString += "background-attachment: fixed; "
+        cssString += (items.backgroundTile ? "background-repeat: repeat; " : "background-repeat: no-repeat");
       }
 
-      if(bgType == 'image') {
-          // Old legacy checking
-          if (bgBase64 == '' || bgBase64 == undefined) {
-            cssString += "background-image: url(" + bgURL + "); "
-          } else {
-            cssString += "background-image: url(" + bgBase64 + "); "
-          }
-          cssString += "background-attachment: fixed; "
-          if(bgTile) {
-              cssString += "background-repeat: repeat; "
-          } else {
-              cssString += "background-repeat: no-repeat; "
-          }
-      }
-
-      css.innerHTML = cssString;
-      document.body.appendChild(css);
+      newCSSElement.innerHTML = cssString;
+      document.body.appendChild(newCSSElement);
 
     });
 });
