@@ -19,6 +19,12 @@ If you have any feature requests or ideas for improvement, please open an issue!
 
 *Note: This is a purely local change. Other users cannot see the background you set, I'm afraid - this is only to re-implement homepage customisation that twitter has removed.*
 
-### Links
+## How it Works
 
-This tiny bit of javascript-barf has been linked to from [The Guardian](http://www.theguardian.com/technology/2015/jul/21/twitter-removes-background-images-timeline-fix-chrom-plugin), [iDigitalTimes](http://www.idigitaltimes.com/twitter-background-image-disappeared-heres-how-fix-it-460114), [VentureBeat](http://venturebeat.com/2015/07/21/as-twitter-turns-off-timeline-background-images-one-developer-has-already-built-a-workaround/), [Gizmodo](http://www.gizmodo.jp/2015/07/_twitter_2.html) and [Lifehacker](http://www.lifehacker.co.uk/2015/07/21/how-to-get-your-background-wallpaper-back-on-twitter)!
+The extension works by inserting a new CSS rule on the body of a twitter page based on the settings you choose. When you 'upload' the background image to the extension, it actually converts it into a [Base64](https://en.wikipedia.org/wiki/Base64) representation of the image and stores it locally in your chrome extension storage.
+
+This Base64 data is then inserted into the page using the `background-image: url()` method - which solves the problem of being unable to pull an image from an extra-twitter location (whether it be from another hosted source or from the local machine).
+
+## Links
+
+This extension has been linked to from [The Guardian](http://www.theguardian.com/technology/2015/jul/21/twitter-removes-background-images-timeline-fix-chrom-plugin), [iDigitalTimes](http://www.idigitaltimes.com/twitter-background-image-disappeared-heres-how-fix-it-460114), [VentureBeat](http://venturebeat.com/2015/07/21/as-twitter-turns-off-timeline-background-images-one-developer-has-already-built-a-workaround/), [Gizmodo](http://www.gizmodo.jp/2015/07/_twitter_2.html) and [Lifehacker](http://www.lifehacker.co.uk/2015/07/21/how-to-get-your-background-wallpaper-back-on-twitter)!
