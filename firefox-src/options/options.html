@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Twitter Background Restorer Options</title>
+    <link href="css/options.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+
+<div id="logo">
+  <img src="images/logo.png">
+</div>
+
+<div id="content-container">
+
+  <button id="instructions-button">?</button>
+  <div class="options" id="instructions">
+    <p>Use the image upload button in the Image Options -> New Image section to upload the background file you wish to use.</p>
+    <p>You can also tile the background (or not), or just choose a background colour. The background colour will also appear behind untiled images.</p>
+  </div>
+
+
+  <div class="options" id="image_options">
+    <h2>Image Options</h2>
+    <p><span class="option-title">New Image:</span>
+        <input type="file" id="imageFile" accept="image/*"/>
+    </p>
+    <p>
+        <span class="option-title">Tile background: </span> <input type="checkbox" id="bgTile">
+    </p>
+    <p>
+        <span class="option-title">Stretch to cover: </span> <input type="checkbox" id="bgCover">
+    </p>
+    <p>
+      <span class="option-title">Current background image preview: </span>
+    </p>
+    <p style='text-align: center;'>
+      <canvas id="currentBG" width="960" height="400">
+    </p>
+  </div>
+
+  <div class="options" id="colour-options">
+    <h2>Background Colour Options</h2>
+    <p><span class="option-title">Background Colour:</span>
+        <input type="color" id="bgColour"/>
+    </p>
+  </div>
+
+  <div class="options" id="type-options">
+    <h2>Background Type Options</h2>
+    <p><span class="option-title">Background type:</span>
+    <select id="bgType">
+        <option value="image">Image</option>
+        <option value="colour">Colour</option>
+    </select>
+    </p>
+    <p class="info">
+        Note: If you select the image background type and have a background colour set above, then that colour will be set underneath the image, in case you chose an untiled background.
+    </p>
+  </div>
+
+  <button id="save-button">Save</button>
+
+</div>
+
+<div id="footer">
+  <div id="footer-container">
+    <div id="attribution">Made by <a href="http://autophagy.io/">autophagy</a></div>
+    <div id="github"><a href="https://github.com/Autophagy/twitter-bg-restorer">Github</a></div>
+  </div>
+</div>
+
+<script src="js/options.js"></script>
+</body>
+</html>
