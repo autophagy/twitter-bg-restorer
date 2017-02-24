@@ -1,12 +1,16 @@
-![Twitter bg restorer logo](src/options/images/logo.png)
+![Twitter bg restorer logo](chrome-src/options/images/logo.png)
 
 A chrome extension that lets you set a custom background image and colour for web twitter. A nostalgic throwback to when the homepage wasn't a sea of searing white.
 
+### Chrome
 [Download from the Web Store](https://chrome.google.com/webstore/detail/twitter-background-restor/gcjejnlljikllkloanankijokfbaelhi)
+
+### Firefox
+[Download from the Mozilla Add-ons repository](https://addons.mozilla.org/en-US/firefox/addon/twitter-background-restorer/)
 
 ## Installation
 
-Install from the Web Store and click on 'Options' below the extension. You can then upload an image and specify a colour.
+Install from the site listed above and open the options for the extension. You can then upload an image and specify a colour.
 
 You can currently:
 
