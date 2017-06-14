@@ -20,9 +20,9 @@ chrome.storage.sync.get({
 
       if(items.backgroundType == 'image') {
         cssString += "background-image: url(" + localItems.backgroundBase64 + ")!important; "
-        cssString += "background-attachment: fixed; "
-        cssString += (items.backgroundTile ? "background-repeat: repeat; " : "background-repeat: no-repeat; ");
-        cssString += (items.backgroundCover ? "background-size: cover" : "");
+        cssString += "background-attachment: fixed!important; "
+        cssString += (items.backgroundTile ? "background-repeat: repeat!important; " : "background-repeat: no-repeat!important; ");
+        cssString += (items.backgroundCover ? "background-size: cover!important" : "");
       }
 
       newCSSElement.innerHTML = cssString;
