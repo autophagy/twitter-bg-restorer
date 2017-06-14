@@ -13,10 +13,10 @@ browser.storage.local.get({
     // This is so the user's background on a tweet permalink will be displayed;
     var cssString = "body:not(.PermalinkPage) { ";
 
-    if (items.backgroundColour != '') cssString += "background-color: " + items.backgroundColour + "; ";
+    if (items.backgroundColour != '') cssString += "background-color: " + items.backgroundColour + "!important; ";
 
     if(items.backgroundType == 'image') {
-      cssString += "background-image: url(" + items.backgroundBase64 + "); "
+      cssString += "background-image: url(" + items.backgroundBase64 + ")!important; "
       cssString += "background-attachment: fixed; "
       cssString += (items.backgroundTile ? "background-repeat: repeat; " : "background-repeat: no-repeat; ");
       cssString += (items.backgroundCover ? "background-size: cover" : "");
