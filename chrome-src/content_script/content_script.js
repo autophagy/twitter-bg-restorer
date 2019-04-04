@@ -14,7 +14,9 @@ chrome.storage.sync.get({
 
       // This applies the CSS rule to every page except for permalink pages
       // This is so the user's background on a tweet permalink will be displayed;
-      var cssString = "body > #react-root > div > div > div > main > div > div.r-e84r5y, body:not(.PermalinkPage):not(.ProfilePage):not(.ShortNavBarMode) { ";
+      var cssString = "body > #react-root > div > div > div > main > div > div.r-e84r5y, "
+      cssString += "body > #react-root > div > div > div > main > div > div.r-bjte33, "
+      cssString += "body:not(.PermalinkPage):not(.ProfilePage):not(.ShortNavBarMode) { ";
 
       if (items.backgroundColour != '') cssString += "background-color: " + items.backgroundColour + "!important; ";
 
