@@ -8,13 +8,13 @@
 	"icons": {"128": "icon128.png",
 			   "48": "icon48.png",
 			   "16": "icon16.png"},
-    "permissions": ["http://*.twitter.com/", "https://*.twitter.com/", "unlimitedStorage", "storage"],
+    "permissions": ["http://*.twitter.com/", "https://*.twitter.com/", "http://*.x.com/", "https://*.x.com/", "unlimitedStorage", "storage"],
     "options_page": "options/options.html",
 	"content_scripts":
 	[
 		{
-			"matches": ["http://twitter.com/*", "https://twitter.com/*",
-						"http://www.twitter.com/*", "https://www.twitter.com/*"],
+			"matches": ["http://twitter.com/*", "https://twitter.com/*", "http://x.com/*", "https://x.com/*",
+						"http://www.twitter.com/*", "https://www.twitter.com/*", "http://www.x.com/*", "https://www.x.com/*"],
 			"js": ["content_script/content_script.js"],
 			"run_at": "document_idle"
 		}
